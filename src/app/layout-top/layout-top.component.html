@@ -1,0 +1,22 @@
+<div class="header" #header>
+    <div class="logo" [ngClass]="{black: topMenuStatus}" >
+      <a [routerLink]="['/home']" (click)="goHeader()"><img src="/assets/images/logo_w@svg.svg"/></a>
+      <ul [ngClass]="{flex: topMenuStatus}">
+        <li><a [routerLink]="['/home']" (click)="goSecret()">特色</a></li>
+        <li><a [routerLink]="['/home']" (click)="goChef()">主廚</a></li>
+        <li><a [routerLink]="['/home']" (click)="goAddress()">地圖</a></li>
+        <li><a [routerLink]="['/orderPage']">訂餐</a></li>
+        <li><a (click)="logout()">{{ loginStatus ? '登出' : '登入' }}</a></li>
+      </ul>
+      <div class="menu" (click)="topMenuStatus = !topMenuStatus">
+        <img src="/assets/images/menu-svgrepo-com.svg"/>
+      </div>
+    </div>
+    <div class="text">
+      <h1><span>咬一口</span>就無法忘懷的漢堡</h1>
+      <p>
+        七夕絕對無法錯過的好滋味<br/>
+        六角大漢堡
+      </p>
+    </div>
+</div>

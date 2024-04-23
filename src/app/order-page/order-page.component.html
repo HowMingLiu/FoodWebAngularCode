@@ -1,0 +1,87 @@
+<div class="cartDesktop">
+  <div class="option">
+    <div class="title">
+      <img src="/assets/images/hamburger.svg">
+      <h3>線上訂購美食</h3>
+    </div>
+    <ul>
+      <li (click)="menuOption('all')" [ngClass]="optionActive.all">全部</li>
+      <li (click)="menuOption('fries')" [ngClass]="optionActive.fries">只愛吃薯條</li>
+      <li (click)="menuOption('hamburger')" [ngClass]="optionActive.hamburger">不敗漢堡系列</li>
+    </ul>
+  </div>
+
+  <div class="sectionCard">
+    <div class="top">
+      <div class="search">
+        <input type="text" id="filterInput" placeholder="搜尋"/>
+        <label for="filterInput"><img src="/assets/images/search-alt.svg"></label>
+      </div>
+      <div class="shoppingCart" (click)="openCartStatus()">
+        <p>購物車</p>
+        <img src="/assets/images/shopping-cart.svg">
+        <span *ngIf="cartTotalNumber">{{ cartTotalNumber }}</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="card" *ngIf="!openCart">
+        <ng-container *ngFor="let item of menuNow; index as i">
+          <div class="perCard" *ngIf=" i >= (nowPage - 1 ) * 6 && i < nowPage * 6 ">
+            <span class="discountTag" *ngIf="item.discountOff != 1">{{ 100 - item.discountOff * 100 }}% OFF</span>
+            <img src="/assets/images/orderPhoto/{{ item.photoSrc }}">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.engTitle }}</p>
+            <p>--------------</p>
+            <span class="{{item.discountOff != 1 ? 'del' : ''}}">${{ item.price }}</span>
+            <span class="discountPrice" *ngIf="item.discountOff != 1">${{ (item.price * item.discountOff) | number: '1.0-0'}}</span>
+            <div class="car" (click)="addToCart(item)">
+              <img src="/assets/images/shopping-cart2.svg">
+              <p>加入購物車</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <ng-container *ngIf="menuNow.length > 6">
+        <nav *ngIf="!openCart">
+          <a (click)="prevPage()">Prev</a>
+          <div *ngFor="let item of pageNum">
+            <a (click)="nowPageTo(item)" [ngClass]="{'active': item == nowPage }">{{ item }}</a>
+          </div>
+          <a (click)="nextPage()">Next</a>
+        </nav>
+      </ng-container>
+      <table *ngIf="openCart">
+        <thead>
+          <tr>
+            <th>品項</th>
+            <th>數量</th>
+            <th>單價</th>
+            <th>總價</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of shoppingCartData; index as index">
+            <td>{{item.title}}</td>
+            <td>
+              <button (click)="subCartNumber(index)">-</button>
+              {{item.count}}
+              <button (click)="addCartNumber(index)">+</button>
+            </td>
+            <td>{{item.price * item.discountOff | number: '1.0-0'}}</td>
+            <td>{{item.totalPrice}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>總金額</td>
+            <td class="total">{{ checkoutPrice }}</td>
+          </tr>
+        </tfoot>
+      </table>
+      
+    </div>
+  </div>
+</div>

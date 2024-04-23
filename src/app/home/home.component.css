@@ -1,0 +1,240 @@
+.content .secret{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #faeae5;
+  padding: 50px 62px;
+}
+@media(max-width:768px){
+  .content .secret{
+    padding: 50px 30px;
+  }
+}
+.content .secret .title{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.content .secret .title span{
+  width: 120px;
+  height: 0;
+  border: 1px solid #979797;
+}
+.content .secret .title p{
+  font-size: 20px;
+  color: #3D1101;
+  line-height: 32px;
+}
+@media(max-width:768px){
+  .content .secret .title span{
+    width: 0;
+    height: 0;
+    border: 0;
+  }
+}
+.content .secret .card{
+  display: flex;
+}
+.content .secret .card div{
+  width: 31.3333%;
+  margin: 0 1% 0;
+  padding: 1em;
+}
+.content .secret .card div h2{
+  font-size: 18px;
+  color: #3D1101;
+  text-align: center;
+  margin: 20px 0 11px;
+}
+.content .secret .card div p{
+  font-size: 16px;
+  color: #3D1101;
+}
+@media(max-width:768px){
+  .content .secret .card{
+    display: block;
+    text-align: center;
+  }
+  .content .secret .card div{
+    width: 100%;
+  }
+}
+/* secret end*/
+
+/* chef */
+.content .chef{
+  display: flex;
+  background-color: #3D1101;
+  padding: 0 42px;
+}
+.content .chef .introduction{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 25px;
+  padding: 1em;
+}
+.content .chef .introduction h1{
+  font-size: 20px;
+  color: #EFE9E7;
+  line-height: 32px;
+}
+.content .chef .introduction p{
+  font-size: 16px;
+  color: #EFE9E7;
+  margin-bottom: 16px;
+}
+@media(max-width:768px){
+  .content .chef{
+    display: block;
+    padding: 0;
+  }
+  .content .chef img{
+    width: 100%;
+  }
+  .content .chef .introduction{
+    margin-left: 0;
+    padding: 31px;
+  }
+}
+/* chef end*/
+
+/* thoughts */
+.content .thoughts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #faeae5;
+  padding: 50px 42px;
+}
+.content .thoughts h1{
+  font-size: 24px;
+  color: #3D1101;
+}
+.content .thoughts .card{
+  display: flex;
+  align-items: center;
+}
+.content .thoughts .card .section{
+  width: 31.3333%;
+  margin: 0 1% 0;
+  display: flex;
+  align-items: start;
+}
+@media(max-width:768px){
+  .content .thoughts{
+    padding: 50px 50px;
+  }
+  .content .thoughts .card{
+    display: block;
+  }
+  .content .thoughts .card .section{
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media(max-width:375px){
+  .content .thoughts{
+    padding: 50px 10px;
+  }
+}
+.content .thoughts .card .section img{
+  margin-right: 13px;
+}
+.content .thoughts .card .section .text h2{
+  font-size: 18px;
+  color: #3D1101;
+  padding: 22px 0;
+}
+.content .thoughts .card .section .text p{
+  font-size: 18px;
+  color: #3D1101
+}
+.content .thoughts .card .section .text div{
+  text-align: end;
+  font-size: 16px;
+  color: rgba(61,17,0,0.75);
+  margin-top: 16px;
+}
+/* thoughts end */
+
+
+/* address */
+.content .address{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 42px;
+}
+
+.content .address h1{
+  font-size: 24px;
+  color: #3D1101;
+  text-align: center;
+  line-height: 1.5em;
+  margin-bottom: 38px;
+}
+.content .address .container{
+  display: flex;
+  width: 100%;
+}
+.content .address .container img,form{
+  width: 48%;
+  margin: 0 1% 0;
+}
+.content .address .container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media(max-width:768px){
+  .content .address{
+    padding: 50px 10px;
+  }
+  .content .address .container{
+    display: block;
+  }
+  .content .address .container img,form{
+    width: 100%;
+  }
+}
+.content .address .container form span,.radio{
+  font-size: 14px;
+  color: #3D1101;
+  margin-bottom: 6px;
+}
+.content .address .container form 
+input[name="username"],
+input[name="phone"],
+input[name="username"],
+input[name="person"]{
+  height: 32px;
+  margin-bottom: 12px;
+}
+.content .address .container form input[name="veget"]{
+  margin-right: 36px;
+  margin-top: 8px;
+}
+.content .address .container form .sub{
+  text-align: end;
+  margin-top: 28px;
+}
+.content .address .container form input[value="取消"]{
+  background-color: rgba(0,0,0,0.35);;
+  color: white;
+  font-size: 14px;
+  width: 70px;
+  height: 32px;
+  border: 0;
+  border-radius: 5px;
+}
+.content .address .container form input[value="送出"]{
+  background-color: #F56C23;
+  color: white;
+  font-size: 14px;
+  width: 70px;
+  height: 32px;
+  border: 0;
+  border-radius: 5px;
+}

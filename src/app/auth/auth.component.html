@@ -1,0 +1,25 @@
+<div class="content">
+  <img src="/assets/images/logo_l.svg"/>
+  <h2>享受美食好味道</h2>
+  <div class="reg">
+    <h2>{{isReg ? '註冊' : '登入'}}</h2>
+    <form id="loginForm" *ngIf="!isReg" (ngSubmit)="login()">
+      <label for="usernameLogin">用戶名*</label><input type="text" name="usernameLogin" id="usernameLogin" autocomplete="off" [(ngModel)]="authLogin.username" required="required" #username="ngModel"><br/>
+      <label for="passwordLogin">密碼*</label><input type="password" name="passwordLogin" id="passwordLogin" autocomplete="off" [(ngModel)]="authLogin.password" required="required"><br/>
+      <div class="btn">
+        <a (click)="isReg = true">註冊</a>
+        <button type="submit">登入</button>
+      </div>
+    </form>
+
+    <form action="" id="regForm" *ngIf="isReg">
+      <label for="usernameReg">用戶名*</label><input type="text" name="usernameReg" id="usernameReg" autocomplete="off" required [(ngModel)]="authReg.username"><br/>
+      <label for="passwordReg">密碼*</label><input type="password" name="passwordReg" id="passwordReg" autocomplete="off" required [(ngModel)]="authReg.password"><br/>
+        <label for="passwordCheck">密碼確認*</label><input type="password" name="passwordCheck" id="passwordCheck" autocomplete="off" required [(ngModel)]="authReg.check"><br/>
+        <a (click)="isReg = false">已有會員</a>
+      <div class="btn">
+        <button type="button" (click)="reg()">註冊</button>
+      </div>
+    </form>
+  </div>
+</div>

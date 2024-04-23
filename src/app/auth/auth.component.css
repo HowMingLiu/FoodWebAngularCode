@@ -1,0 +1,103 @@
+.content {
+  padding: 30px;
+  background-color: #faeae5;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+  flex-direction: column;
+}
+
+.content .reg {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid rgb(198, 193, 193);
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 2px rgb(173, 173, 173);
+  border-top: 4px solid rgb(246, 155, 44);
+}
+
+.content h2 {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: #3d1101
+}
+.content > h2 {
+  margin: 5px 0 10px 0;
+}
+
+
+.content .reg > form label {
+  display: block;
+  margin: 15px 0 3px 0;
+  font-size: 14px;
+  color: #3d1101
+}
+
+.content .reg > form input {
+  width: 200px;
+  border: 1px solid rgb(182, 182, 182);
+  border-radius: 5px;
+}
+
+/* 註冊頁面已有會員 */
+.content .reg form > a {
+  display: block;
+  font-size: 12px;
+  text-decoration: none;
+  color: rgb(246, 155, 44);
+  margin-bottom: -12px;
+  cursor: pointer;
+}
+
+.content .reg .btn {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* 登入按鈕 */
+.content .reg .btn > button{
+  width: 48%;
+  background: rgb(255, 177, 81);
+  border: 1px solid rgb(252, 201, 160);
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  height: 25px;
+  cursor: pointer;
+}
+.content .reg .btn > button:hover {
+  background: white;
+  color: rgb(255, 177, 81);
+}
+.content .reg .btn > button:active {
+  background: rgb(33, 129, 255);
+  color: white;
+}
+
+/* 登出按鈕 */
+.content .reg .btn > a{
+  width: 48%;
+  background: rgb(124, 123, 123);
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.content .reg .btn > a:hover {
+  background: white;
+  color: rgb(124, 123, 123);
+  cursor: pointer;
+}
+.content .reg .btn > a:active {
+  background: rgb(33, 129, 255);
+  color: white;
+}
